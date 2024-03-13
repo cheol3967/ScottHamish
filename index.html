@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScottHamish</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/ScottHamish.css">
+  <link rel="stylesheet" href="css/ScottHamish.scss">
+</head>
+
+<script src="lib/jquery-3.7.1.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script>
+
+  $(function () {
+    let nav = $('.header nav')
+      let openBtn = $('.header .inner > p')
+      let closeBtn = $('.header .nav > p')
+
+      openBtn.click(function(){
+        nav.animate({
+          'left' : '0',
+        }, 500);
+      });
+      closeBtn.click(function(){
+        nav.animate({
+          'left' : '-100%',
+        }, 300);
+      });
+
+
+
+
+
+    //produt jquery 탭메뉴 구현
+    let productMenu = $('.product .product__menu li');
+    let productList = $('.product .product__list');
+
+    let smallboxli = $('.section03_smallbox01 li')
+    let largebox = $('.section03d')
+
+    smallboxli.click(function () {
+      smallboxli.removeClass('on');
+      $(this).addClass('on');
+      largebox.removeClass('on')
+      largebox.eq($(this).index()).addClass('on')
+    })
+
+    productMenu.click(function () {
+      // $(this).index() => 클릭한 index값 찾기
+      //eq() => index값 설정
+      //eq(&(this).index()) => 클릭한 index값을 다른 요소의 index값으로 설정
+      productMenu.removeClass('on');
+      $(this).addClass('on');
+      productList.removeClass('on');
+      productList.eq($(this).index()).addClass('on');
+    });
+
+    
+    $(window).scroll(function(){
+    // 스크롤 위치 확인
+    if($(this).scrollTop() > 10){ // 원하는 스크롤 위치(px)로 변경
+      $('.header').css('background-color', '#333333'); // 배경색 변경
+    } else {
+      $('.header').css('background-color', ''); // 초기 배경색으로 복원
+    }
+  });
+
+
+
+  });
+
+</script>
+
+<body>
+  <div id="wrap">
+    <header class="header" id="header">
+      <div class="inner">
+        <p>MENU</p>
+
+        <nav class="nav">
+          <p>CLOSE</p>
+          <ul class="gnb">
+
+            <li class="depth01">
+              <a href="#">ABOUT</a>
+              <ul class="depth02">
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">SCOTLAND</a></li>
+                <li><a href="#">CONTACT</a></li>
+              </ul><!-- depth02 END -->
+            </li><!-- depth01 END -->
+
+            <li class="depth01">
+              <a href="#">PRODUCT</a>
+            </li><!-- depth01 END -->
+
+            <li class="depth01">
+              <a href="#">BOARD</a>
+              <ul class="depth02">
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">REVIEW</a></li>
+              </ul><!-- depth02 END -->
+            </li> <!-- depth01 END -->
+
+            <li class="depth01">
+              <a href="#">MYPAGE</a>
+            </li><!-- depth01 END -->
+
+          </ul><!-- .gnb end -->
+        </nav> <!-- .nav end -->
+
+        <h1>
+          <a href="#">
+            <figure><img src="img/logo1메인로고흰색.png" alt="메인로고"></figure>
+          </a>
+        </h1>
+
+        <div class="search">
+          <a href="#"><figure><img src="img/search.png" alt="검색"></figure></a>
+          <a href="#"><figure><img src="img/mypage.png" alt="mypage"></figure></a>
+        </div><!-- search end -->
+
+      </div><!-- div inner end -->
+    </header> <!-- header end -->
+
+    <!------------🍖header end-------------------->
+    <div class="main" id="main">
+
+      <section class="section01">
+
+        <!-- Swiper -->
+        <div class="swiper Swiper01">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <figure>
+                  <img src="img/main01_1.jpg" alt="">
+                </figure>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <figure>
+                  <img src="img/main01_2.jpg" alt="">
+                </figure>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <figure>
+                  <img src="img/main01_3.jpg" alt="">
+                </figure>
+            </div>
+            </a>
+            <div class="swiper-slide">
+              <a href="#">
+                <figure>
+                  <img src="img/main01_4.jpg" alt="">
+                </figure>
+              </a>
+            </div>
+
+          </div>
+
+          <div class="swiper-pagination"></div> <!--밑에꺼 -->
+        </div><!-- .Swiper01 end -->
+
+      </section><!-- section01 end -->
+
+      <section class="section02">
+        <div class="inner">
+          <div>
+            <h2 class="section02_title">
+              Blended Essence Collection
+            </h2>
+            <p class="section02_text1">
+              스코틀랜드, 당신의 피부에 전하는 위대한 유산
+            </p>
+            <p class="section02_text2">
+              Scotland, The great heritage for your skin
+            </p>
+          </div>
+          <div class="section02_box section02_box1">
+            <figure><a href=""><img src="img/main02_1.png" alt=""></a></figure>
+            <div>
+              <h3>남자의 피부를 위한 <br>최적의 블랜딩</h3>
+              <h5>스콧해미쉬 블루 블렌디드 토너 에센스</h5>
+              <button><a href="#">자세히보기</a></button>
+            </div>
+          </div> <!-- section02_box1 end-->
+
+          <div class="section02_box section02_box2">
+            <figure><a href="#"><img src="img/main02_2.png" alt=""></a></figure>
+            <div>
+              <h3>남자들을 위한 명품 <br>피부케어 솔루션</h3>
+              <h5>스콧해미쉬 블루 블렌디드 로션 에센스</h5>
+              <button><a href="#">자세히보기</a></button>
+            </div>
+          </div> <!-- section02_box2 end-->
+        </div> <!-- .inner end -->
+      </section><!-- section02 end -->
+
+      <section class="section03">
+        <div class="inner">
+          <div class="section34_title">
+            <h3>BEST PRODUCT</h3>
+            <h5>스콧해미쉬의 가장 사랑받는 제품을 소개합니다.</h5>
+          </div>
+
+          <div class="section03_box">
+            <ul class="section03_smallbox01">
+              <li><figure><img src="img/main03_1.jpg" alt=""></figure></li>
+              <li><figure><img src="img/main03_2.jpg" alt=""></figure></li>
+              <li><figure><img src="img/main03_3.jpg" alt=""></figure></li>
+              <li><figure><img src="img/main03_4.jpg" alt=""></figure></li>
+            </ul><!-- section03_smallbox01 end-->
+
+            <div class="section03d on">
+              <div class="section03_smallbox02 ">
+
+                <figure><img src="img/main03_1.jpg" alt=""></figure>
+
+                <div class="main03_text">
+                  <h6>스콧해미쉬 블루 블렌디드 <br>
+                    스페셜 기프트 180ml 2종</h6>
+                  <p>스콧해미쉬의 시그니처 제품으로 토너 에센스와 로션 에센스
+                    본품에 클렌징폼 견본을 증정하여 고급 선물세트로
+                    선물용으로 최적화된 제품</p>
+                  <del>110,000원</del>
+                  <strong>99,000원</strong>
+                  <button><a href="#">BUY NOW</a></button>
+                </div><!-- main03_text end -->
+
+              </div><!-- section03_smallbox02 -->
+            </div>
+
+            <div class="section03d ">
+              <div class="section03_smallbox02">
+                <figure><img src="img/main03_2.jpg" alt=""></figure>
+                <div class="main03_text">
+                  <h6> 스콧해미쉬 클레이모어 모이스처<br>
+                    핸드크림 50ml </h6>
+                  <p>스내 손을 촉촉하고 건강하게 지켜주는 최고의 보습 무기 모이스춰 핸드크림.
+                    스코틀랜드 전사들의 무기 대형검인 클레이모어를 모티브로 탄생한
+                    주름개선, 미백 기능성의 보습 핸드크림</p>
+                  <del>22,000원</del>
+                  <strong>18,700원</strong>
+                  <button><a href="#">BUY NOW</a></button>
+                </div><!-- main03_text end -->
+              </div><!-- section03_smallbox02 -->
+            </div>
+
+            <div class="section03d">
+              <div class="section03_smallbox02">
+                <figure><img src="img/main03_3.jpg" alt=""></figure>
+                <div class="main03_text">
+                  <h6>스콧해미쉬 블루 블렌디드 <br>
+                    스페셜 기프트 180ml 2종</h6>
+                  <p>스콧해미쉬의 시그니처 제품으로 토너 에센스와 로션 에센스
+                    본품에 클렌징폼 견본을 증정하여 고급 선물세트로
+                    선물용으로 최적화된 제품</p>
+                  <del>110,000원</del>
+                  <strong>99,000원</strong>
+                  <button><a href="#">BUY NOW</a></button>
+                </div><!-- main03_text end -->
+              </div><!-- section03_smallbox02 -->
+            </div>
+
+            <div class="section03d">
+              <div class="section03_smallbox02">
+                <figure><img src="img/main03_4.jpg" alt=""></figure>
+                <div class="main03_text">
+                  <h6>스콧해미쉬 커리지 <br>
+                    립밤&케이스 세트 3.5g</h6>
+                  <p> 입술 보습을 통한 자신감과 용기로 성공을 부르는 립밤. 전쟁에 나가기 전 마지막 세레모니로 부르는 악기인
+                    백파이프를 모티브로 탄생한 커리지 립밤. 고급스러운 타탄무늬와 소가죽으로 만든 케이스로
+                    립밤을 보관하고 선물용으로 제격인 립밤 기프트 세트</p>
+                  <del>52,000원</del>
+                  <strong>46,800원</strong>
+                  <button><a href="#">BUY NOW</a></button>
+                </div><!-- main03_text end -->
+              </div><!-- section03_smallbox02 -->
+            </div>
+          </div><!-- section03_box -->
+
+
+        </div><!-- inner end -->
+      </section><!-- section03 end -->
+
+
+      <section class="middle_line">
+        <p>SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT
+          HAMISH.
+          SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT
+          HAMISH.
+          SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT HAMISH. SCOTT
+          HAMISH.
+        </p>
+      </section>
+
+      <section class="section04 product">
+        <div class="inner">
+          <div class="section34_title">
+            <h3>ALL PRODUCT</h3>
+            <h5>스콧해미쉬의 모든 제품을 소개합니다.</h5>
+          </div><!-- .title end -->
+
+          <ul class="product__menu">
+            <li class="on">
+              <span>스킨케어</span>
+              <a href="#" data-text="더보기">
+                <img src="img/plus_btn.svg" alt="더보기">
+              </a>
+            </li>
+
+            <li>
+              <span>선케어</span>
+              <a href="#">
+                <img src="img/plus_btn.svg" alt="더보기">
+              </a>
+            </li>
+
+            <li>
+              <span>핸드케어</span>
+              <a href="#">
+                <img src="img/plus_btn.svg" alt="더보기">
+              </a>
+            </li>
+
+            <li>
+              <span>패키지</span>
+              <a href="#">
+                <img src="img/plus_btn.svg" alt="더보기">
+              </a>
+            </li>
+          </ul><!-- .product_menu end -->
+
+
+          <div class="product__list on">
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-1_1.png" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 블루 블렌디드 토너<br>
+                    에센스 180ml</h4>
+                  <span>55,000원</span>
+                  <strong>49,500원</strong>
+                  <span>(5,500원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-1_2.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 블루 블렌디드 토너<br>
+                    에센스 180ml</h4>
+                  <span>55,000원</span>
+                  <strong>49,500원</strong>
+                  <span>(5,500원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-1_3.png" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 블루 블렌디드 토너<br>
+                    에센스 180ml</h4>
+                  <span>55,000원</span>
+                  <strong>49,500원</strong>
+                  <span>(5,500원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+          </div><!-- .product_list end -->
+
+          <div class="product__list">
+
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-2_1.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 클래식 골프 선스틱<br>
+                    SPF50+PA++++ 18.5g</h4>
+                  <span>30,000원</span>
+                  <strong>25,500원</strong>
+                  <span>(4,500원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-2_2.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 클래식 골프 선크림<br>
+                    SPF50+PA++++ 40ml</h4>
+                  <span>30,000원</span>
+                  <strong>25,500원</strong>
+                  <span>(4,500원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-2_3.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 단품2종기획 클래식 골프 <br>
+                    선크림 40ml+선스틱 18.5g</h4>
+                  <span>60,000원</span>
+                  <strong>51,000원</strong>
+                  <span>(9,000원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+          </div><!-- .product_list end -->
+
+          <div class="product__list">
+
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-3_1.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 클레이모어 모이스처<br>
+                    핸드크림 50ml</h4>
+                  <span>22,000원</span>
+                  <strong>18,700원</strong>
+                  <span>(3,300원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-3_2.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 클레이모어 브라이트닝<br>
+                    핸드크림 50ml</h4>
+                  <span>22,000원</span>
+                  <strong>18,700원</strong>
+                  <span>(3,300원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-3_3.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 단품2종기획 클레이모어<br>
+                    모이스처 50ml+브라이트닝 핸드크림 50ml</h4>
+                  <span>44,000원</span>
+                  <strong>37,400원</strong>
+                  <span>(6,600원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+          </div><!-- .product_list end -->
+
+          <div class="product__list">
+
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-4_1.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 블루 블렌디드<br>
+                    스페셜 기프트 180ml 2종</h4>
+                  <span>110,000원</span>
+                  <strong>99,000원</strong>
+                  <span>(11,000원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-4_2.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4> 스콧해미쉬 단품5종기획 토너에센스+로션에센스<br>
+                    +클렌징폼+선크림+선스틱+쇼핑백</h4>
+                  <span>195,000원</span>
+                  <strong>156,000원</strong>
+                  <span>(39,000원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+            <div class="item">
+              <a href="#">
+                <figure>
+                  <img src="img/main04-4_3.jpg" alt="블럭캔들">
+                </figure>
+                <div class="item-text">
+                  <h4>스콧해미쉬 단품8종기획 토너에센스+로션에센스+선크림<br>
+                    +선스틱+클렌징폼+립밤+핸드크림2종+쇼핑백</h4>
+                  <span>272,000원</span>
+                  <strong>217,600원</strong>
+                  <span>(54,400원할인)</span>
+                </div><!-- .item-text end -->
+              </a>
+            </div><!-- .item end -->
+
+          </div><!-- .product_list end -->
+
+          <button class="section04_btn"><a href="#">더보기</a></button>
+        </div><!-- .inner end -->
+      </section><!-- section04 end -->
+
+      <section class="section05">
+        <div class="inner">
+          <div class="youtube">
+            <div> <!-- 유튜브 공유 복사 붙여넣기 -->
+              <iframe width="1440px" height="810px" src="https://www.youtube.com/embed/c2GYvbKBmL0?si=88WYoIRhqOGf9d1B"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <!--&autoplay=1 :자동재생 , &mute=1 음소거
+            &loop=1&playlist=5hKkaSL5P7A ?전에있는게 이름부분임 이게있어야 반복재생 가능 -->
+          </div><!-- .youtube end -->
+
+          <div class="section05_img">
+            <a href="#">
+              <figure><img src="img/main05_1.png" alt=""></figure>
+            </a>
+            <a href="#">
+              <figure><img src="img/main05_2.png" alt=""></figure>
+            </a>
+          </div>
+        </div><!-- inner end -->
+      </section><!-- section05 end -->
+    </div><!-- main end -->
+
+    <footer class="footer">
+      <h1>
+        <figure><img src="img/logo1메인로고흰색.png" alt=""></figure>
+      </h1>
+      <div class="inner">
+        <ul class="bar">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">AGREEMENT</a></li>
+          <li><a href="#">PRIVACY POLICY</a></li>
+          <li><a href="#">GUIDE</a></li>
+        </ul>
+        <div class="footer_flex">
+          <div class="footer-1">
+            <h6>고객센터번호</h6>
+            <a href='tel:070-7777-2893'>070-7777-2893</a>
+            <p>WEEKDAY : 10:00 - 18:00 / LUNCH : 12:30 - 13:30</p>
+            <p>CLOSED : SAT,SUN AND HOLIDAYS</p>
+            <ul>
+              <li>법인명(상호) : (주)체온365 대표자(성명) : 윤형준</li>
+              <li>사업자 등록번호 : 730-86-01496 통신판매업 신고 제 2023-서울서초-1439 호</li>
+              <li>전화 : 070-7777-2893 주소 : 서울특별시 서초구 반포대로 9길 38, 1층</li>
+              <li>개인정보보호책임자 : 윤형준 Contact help#cheon365.com for more information.</li>
+            </ul>
+          </div>
+          <div class="footer-2">
+            <p>Scott Hamish는 판매수익의 일부를 지구촌 이웃의 자립을 위해 사용합니다.</p>
+            <a href="#">
+              <figure><img src="img/global.png" alt=""></figure>
+            </a>
+            <strong>BANK INFO</strong>
+            <P>신한은행 140-012-936538</P>
+            <P>예금주 : (주)체온365</P>
+            <strong>COMMUNITY</strong>
+            <ul>
+              <li><a href="#">NOTICE</a></li>
+              <li><a href="#">Q&A</a></li>
+              <li><a href="#">REVIEW</a></li>
+              <li><a href="#">EVENT</a></li>
+              <li><a href="#">DELIVERY</a></li>
+            </ul>
+          </div>
+        </div>
+        <span>
+          Copyright ⓒ 2020 cheon365 Co.,Ltd.All rights reserved.
+        </span>
+      </div><!-- inner end -->
+    </footer> <!-- footer end -->
+
+  </div> <!-- #id wrap end -->
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".Swiper01", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+
+</body>
+
+</html>
